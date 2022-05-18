@@ -5,10 +5,11 @@
 }
 .btn {
     background-color: white;
-    color: black
+    color: black;
     padding: 10px 28px;
     border-radius: 28;
 }
 .btn:hover {
    background-color: aqua;
    color: black;
+}
