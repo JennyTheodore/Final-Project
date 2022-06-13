@@ -19,9 +19,17 @@ class ItemsController {
         // Push the item to the items property
         this.items.push(item);
     }
+    saveItems() {
+        localStorage.setItem("items", JSON.stringify(this.items));
+        localStorage.setItem("id", JSON.stringify(this.currentId));
+    }
+
+    loadItems() {
+        const list = localStorage.getItem("items")
+        this.items = JSON.parse(list);
+        const id = localStorage.getItem("id")
+        this.currentId = JSON.parse(id);
+    }
 }
 
-let newItem = new ItemsController();
-newItem.addItem("Else-formula", "liquid nutrition for baby's health", "https://images-na.ssl-images-amazon.com/images/I/41lVE92SsuL.jpg");
-newItem.addItem("Else", "liquid nutrition for baby's health", "https://images-na.ssl-images-amazon.com/images/I/41lVE92SsuL.jpg");
-console.log(newItem.items);
+
