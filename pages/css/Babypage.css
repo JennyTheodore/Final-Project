@@ -4,7 +4,11 @@
 } 
 .btn {
      background-color: white;
+<<<<<<< HEAD
      color: black
+=======
+     color: black;
+>>>>>>> origin
      padding: 10px 28px;
      border-radius: 28;
 }
@@ -18,6 +22,7 @@
     border-radius: 0.5rem;
 }
 
+<<<<<<< HEAD
 .checked {
     color: orange;
   }
@@ -63,3 +68,14 @@
 .add-cart:hover{
     background: blue(341, 33%, 17%);
 }
+=======
+#about img {
+    width: 40em;
+}
+
+.checked {
+    color: orange;
+  }
+
+  
+>>>>>>> origin
