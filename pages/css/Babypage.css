@@ -18,6 +18,10 @@
     border-radius: 0.5rem;
 }
 
+#about img {
+    width: 40em;
+}
+
 .checked {
     color: orange;
   }
