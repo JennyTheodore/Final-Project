@@ -7,21 +7,23 @@ controller.addItem("Clock", "liquid nutrition for baby's health", "https://image
 console.log(controller.items);
 controller.saveItems();
 
-function displayCards() {
+function displayCart() {
     controller.loadItems();
     controller.items.forEach(item => {
         let product = 
-        `<div class="card" data-id="${item.id}" style="width: 18rem;">
-            <img src="${item.imageUrl}" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">${item.name}</h5>
-                <p class="card-text">${item.description}</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>`;
-        let list = document.getElementById("list-items")
+        `
+        <tr>
+            <td><a href="#"><box-icon name='x-circle'></box-icon></a></td>
+            <td><img src="${item.imageUrl}" alt=""></td>
+            <td>${item.name}</td>
+            <td>$ ${item.price}</td>
+            <td><input type="number" value="${item.quantity}"></td>
+            <td>${item.price * item.quantity} </td>
+        </tr>
+        `;
+        let list = document.getElementsByTagName("tbody");
         list.innerHTML += product;
     });
 }
 
-displayCards();
+displayCart();
