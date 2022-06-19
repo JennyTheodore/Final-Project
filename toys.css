@@ -1,11 +1,11 @@
 h2 {
     text-align: center;
-    margin-top: 5rem;
+    margin-top: 2rem;
 }
 .spam {
     text-align: center;
     font-style: bold;
-    margin: 3rem 3rem;
+     margin: 1rem 1rem; 
     font-size: large;
 }
 .container {
@@ -23,10 +23,7 @@ h2 {
     margin-top: 100px;
     /* margin-bottom: 50px; */
    }
-   .hero-img3 {
-    display: inline-flex;
-    justify-content: center;
-   }
+   
   /* .btn {
        background-color: white;
        color: black;
@@ -55,10 +52,9 @@ h2 {
   }
    
   
-  .container {
-    margin-top: 100px;
+  
     
-  }
+  
    
   .Card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
