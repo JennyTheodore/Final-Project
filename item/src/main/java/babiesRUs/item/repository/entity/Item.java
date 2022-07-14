@@ -1,5 +1,7 @@
 package babiesRUs.item.repository.entity;
 
+import babiesRUs.item.controller.dto.ItemDTO;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -25,6 +27,12 @@ public class Item {
         this.name = name;
         this.description = description;
         this.imgUrl = imgUrl;
+    }
+
+    public Item(ItemDTO itemDTO) {
+        this.name = itemDTO.getName();
+        this.description = itemDTO.getDescription();
+        this.imgUrl = itemDTO.getImageUrl();
     }
 
     public Integer getId()
