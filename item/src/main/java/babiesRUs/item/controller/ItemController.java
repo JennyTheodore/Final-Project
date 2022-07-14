@@ -1,7 +1,7 @@
 package babiesRUs.item.controller;
 
 import babiesRUs.item.repository.entity.Item;
-import babiesRUs.item.repository.entity.ItemRepository;
+import babiesRUs.item.repository.ItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

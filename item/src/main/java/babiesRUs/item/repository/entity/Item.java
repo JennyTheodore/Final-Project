@@ -6,8 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Item
-{
+public class Item {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
@@ -17,6 +16,16 @@ public class Item
     private String description;
 
     private String imgUrl;
+
+    public Item() {
+    }
+
+    public Item(Integer id, String name, String description, String imgUrl) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.imgUrl = imgUrl;
+    }
 
     public Integer getId()
     {

@@ -1,4 +1,4 @@
-package babiesRUs.item.repository.entity;
+package babiesRUs.item.repository;
 
 import babiesRUs.item.repository.entity.Item;
 import org.springframework.data.repository.CrudRepository;
