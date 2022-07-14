@@ -8,7 +8,7 @@ public interface ItemService {
 
     Item save(Item item );
 
-    boolean delete( int itemId );
+    void delete( int itemId );
 
     List<Item> all();
 
