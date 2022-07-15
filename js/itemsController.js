@@ -7,22 +7,18 @@ class ItemsController {
     }
 
     // Create the addItem method
-    addItem(name, description, imageUrl) {
+    addItem(name, description, imgUrl) {
         const item = {
             // Increment the currentId property
             id: this.currentId++,
             name: name,
             description: description,
-            imageUrl: imageUrl
+            imgUrl: imgUrl
         };
 
         // Push the item to the items property
         this.items.push(item);
-        this.loadItems();
-    }
-    saveItems() {
-        localStorage.setItem("items", JSON.stringify(this.items));
-        localStorage.setItem("id", JSON.stringify(this.currentId));
+        // this.loadItems();
     }
 
     loadItems() {
@@ -32,10 +28,14 @@ class ItemsController {
         this.currentId = JSON.parse(id);
     }
 
-    save({name, description, imageUrl}){
-        const data = { name,  description, imageUrl };
+    saveLocal() {
+        localStorage.setItem("items", JSON.stringify(this.items));
+        localStorage.setItem("id", JSON.stringify(this.currentId));
+    }
+    saveDb({name, description, imgUrl}){
+        const data = { name,  description, imgUrl };
 
-        fetch('http://localhost:8080/item', {
+        fetch('http://localhost:8080/api/item/add', {
         method: 'POST', // or 'PUT'
         headers: {
             'Content-Type': 'application/json',
@@ -51,28 +51,28 @@ class ItemsController {
         });
     }
 
-    update({name, description, imageUrl}){
-        const data = { name,  description, imageUrl };
+    // update({name, description, imageUrl}){
+    //     const data = { name,  description, imageUrl };
 
-        fetch('http://localhost:8080/item', {
-        method: 'PUT', // or 'PUT'
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-        })
-        .then(response => response.json())
-        .then(data => {
-        console.log('Success:', data);
-        })
-        .catch((error) => {
-        console.error('Error:', error);
-        });
-    }
+    //     fetch('http://localhost:8080/api/item', {
+    //     method: 'PUT', // or 'PUT'
+    //     headers: {
+    //         'Content-Type': 'application/json',
+    //     },
+    //     body: JSON.stringify(data),
+    //     })
+    //     .then(response => response.json())
+    //     .then(data => {
+    //     console.log('Success:', data);
+    //     })
+    //     .catch((error) => {
+    //     console.error('Error:', error);
+    //     });
+    // }
 
     delete(itemId){
 
-        fetch(`http://localhost:8080/item/${itemId}`, {
+        fetch(`http://localhost:8080/api/item/${itemId}`, {
         method: 'DELETE', // or 'PUT'
         headers: {
             'Content-Type': 'application/json',
@@ -88,21 +88,21 @@ class ItemsController {
         });
     }
 
-    findById(itemId){
+    // findById(itemId){
 
-        fetch(`http://localhost:8080/item/${itemId}`, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-        })
-        .then(response => response.json())
-        .then(data => {
-        console.log('Success:', data);
-        })
-        .catch((error) => {
-        console.error('Error:', error);
-        });
-    }
+    //     fetch(`http://localhost:8080/item/${itemId}`, {
+    //     method: 'GET',
+    //     headers: {
+    //         'Content-Type': 'application/json',
+    //     },
+    //     body: JSON.stringify(data),
+    //     })
+    //     .then(response => response.json())
+    //     .then(data => {
+    //     console.log('Success:', data);
+    //     })
+    //     .catch((error) => {
+    //     console.error('Error:', error);
+    //     });
+    // }
 }

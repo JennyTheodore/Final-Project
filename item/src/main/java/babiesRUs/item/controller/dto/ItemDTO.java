@@ -35,7 +35,7 @@ public class ItemDTO {
         this.description = description;
     }
 
-    public String getImageUrl()
+    public String getImgUrl()
     {
         return imgUrl;
     }

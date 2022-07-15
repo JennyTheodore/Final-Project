@@ -27,10 +27,9 @@ public class ItemController{
     }
 
     @CrossOrigin
-    @PostMapping
-    public Item save( @RequestBody ItemDTO itemDTO )
-    {
-        return itemService.save( new Item( itemDTO ) );
+    @PostMapping("/add")
+    public Item createItem(@RequestBody ItemDTO newItemDTO){
+        return itemService.save(newItemDTO);
     }
 
     @GetMapping( "/{id}" )
@@ -39,14 +38,9 @@ public class ItemController{
         return itemService.findById( id );
     }
 
-    @PutMapping( "/{id}" )
-    public Item update(@RequestBody ItemDTO itemDTO, @PathVariable Integer id )
-    {
-        Item item = itemService.findById( id );
-        item.setName( item.getName() );
-        item.setDescription( item.getDescription() );
-        item.setImgUrl( item.getImgUrl() );
-        return itemService.save( item );
+    @PutMapping("/{id}")
+    public Item updateItem(@RequestBody ItemDTO itemDTO, @PathVariable("id") int itemId){
+        return itemService.update(itemDTO, itemId);
     }
 
     @DeleteMapping( "/{id}" )

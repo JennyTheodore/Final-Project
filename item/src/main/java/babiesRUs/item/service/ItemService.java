@@ -1,14 +1,16 @@
 package babiesRUs.item.service;
 
+import babiesRUs.item.controller.dto.ItemDTO;
 import babiesRUs.item.repository.entity.Item;
 
 import java.util.List;
 
 public interface ItemService {
 
-    Item save(Item item );
+    Item save(ItemDTO itemDTO );
 
-    void delete( int itemId );
+    Item update(ItemDTO itemDTO, int itemId);
+    void delete(int itemId );
 
     List<Item> all();
 
