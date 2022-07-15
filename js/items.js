@@ -10,7 +10,7 @@ controller.saveItems();
 function displayCards() {
     controller.loadItems();
     controller.items.forEach(item => {
-        let product = 
+        let product =
         `<div class="card" data-id="${item.id}" style="width: 18rem;">
             <img src="${item.imageUrl}" class="card-img-top" alt="...">
             <div class="card-body">
@@ -23,5 +23,4 @@ function displayCards() {
         list.innerHTML += product;
     });
 }
-
 displayCards();

@@ -12,26 +12,24 @@ newItemForm.addEventListener('submit', (event) => {
     // Select the inputs
     const newItemName = document.querySelector('#newItemName');
     const newItemDescription = document.querySelector('#newItemDescription');
-    const newItemImageUrl = document.querySelector('#newItemImageUrl');    
-    const newEmail = document.querySelector('#newEmail');    
+    const newItemImageUrl = document.querySelector('#newItemImageUrl');
 
     // Get the values of the inputs
     const name = newItemName.value;
     const description = newItemDescription.value;
     const imageUrl = newItemImageUrl.value;
-    const email = newEmail.value;
 
     /*
         Validation code here
     */
 
     // Add the item to the ItemsController
-    itemsController.addItem(name, description, imageUrl, email);
+    itemsController.addItem(name, description, imageUrl);
     itemsController.saveItems();
+    itemsController.save(name, description, imageUrl);
 
     // Clear the form
     newItemName.value = '';
-    newItemDescription.value = '';    
-    newItemImageUrl.value = '';    
-    newEmail.value = '';    
+    newItemDescription.value = '';
+    newItemImageUrl.value = '';
 });

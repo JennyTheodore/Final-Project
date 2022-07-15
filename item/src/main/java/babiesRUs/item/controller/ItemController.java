@@ -26,6 +26,7 @@ public class ItemController{
         return itemService.all();
     }
 
+    @CrossOrigin
     @PostMapping
     public Item save( @RequestBody ItemDTO itemDTO )
     {
