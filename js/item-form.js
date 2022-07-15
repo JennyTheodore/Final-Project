@@ -1,8 +1,25 @@
 // Initialize a new ItemsController with currentId set to 0
 const itemsController = new ItemsController();
 
-// Select the New Item Form
-const newItemForm = document.querySelector('#newItemForm');
+function displayCards() {
+    itemsController.loadItems();
+    itemsController.items.forEach(item => {
+        let product =
+        `<div class="card" data-id="${item.id}" style="width: 18rem;">
+            <img src="${item.imageUrl}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${item.name}</h5>
+                <p class="card-text">${item.description}</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <a href="#" class="btn btn-primary">Delete</a>
+                <a href="#" class="btn btn-primary">Edit</a>
+            </div>
+        </div>`;
+        let list = document.getElementById("list-items")
+        list.innerHTML += product;
+    });
+}
+displayCards();
 
 // Add an 'onsubmit' event listener
 newItemForm.addEventListener('submit', (event) => {
