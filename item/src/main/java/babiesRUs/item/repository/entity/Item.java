@@ -32,7 +32,7 @@ public class Item {
     public Item(ItemDTO itemDTO) {
         this.name = itemDTO.getName();
         this.description = itemDTO.getDescription();
-        this.imgUrl = itemDTO.getImageUrl();
+        this.imgUrl = itemDTO.getImgUrl();
     }
 
     public Integer getId()

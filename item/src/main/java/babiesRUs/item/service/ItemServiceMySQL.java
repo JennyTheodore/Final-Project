@@ -1,5 +1,6 @@
 package babiesRUs.item.service;
 
+import babiesRUs.item.controller.dto.ItemDTO;
 import babiesRUs.item.repository.ItemRepository;
 import babiesRUs.item.repository.entity.Item;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,9 +22,29 @@ public class ItemServiceMySQL implements ItemService {
     }
 
     @Override
-    public Item save( Item item )
-    {
-        return itemRepository.save( item );
+    public Item save(ItemDTO itemDTO) {
+//      converting a PlayerDTO to a Player entity
+        Item item = new Item(itemDTO);
+        return itemRepository.save(item);
+    }
+    @Override
+    public Item update(ItemDTO itemDTO, int itemId) {
+        Item itemFromDb = findById(itemId);
+
+//        update the players information
+        if(itemDTO.getName() == null){
+            itemFromDb.setName(itemFromDb.getName());
+        } else if(itemDTO.getName().isEmpty()) {
+            itemFromDb.setName(itemFromDb.getName());
+        } else {
+            itemFromDb.setName(itemDTO.getName());
+        }
+
+        itemFromDb.setDescription(itemDTO.getDescription() != null ? itemDTO.getDescription() : itemDTO.getDescription());
+        itemFromDb.setImgUrl(itemDTO.getImgUrl() != null ? itemDTO.getImgUrl() : itemDTO.getImgUrl());
+//        save the player back to the DB
+//        return the player to the client
+        return itemRepository.save(itemFromDb);
     }
 
     @Override
@@ -47,7 +68,11 @@ public class ItemServiceMySQL implements ItemService {
 
     @Override
     public Item findById(int itemId) {
-        return null;
+        Optional<Item> optionalItem = itemRepository.findById(itemId);
+        if(optionalItem.isEmpty()){
+            return null;
+        }
+        return optionalItem.get();
     }
 }
 
