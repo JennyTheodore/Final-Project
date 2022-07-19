@@ -6,8 +6,6 @@ import babiesRUs.item.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
 @RequestMapping("/item")
 public class ItemController{
@@ -43,6 +41,7 @@ public class ItemController{
         return itemService.update(itemDTO, itemId);
     }
 
+    @CrossOrigin
     @DeleteMapping( "/{id}" )
     public void delete( @PathVariable Integer id )
     {
