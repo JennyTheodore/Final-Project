@@ -7,31 +7,45 @@ class ItemsController {
     }
 
     // Create the addItem method
-    addItem(name, description, imgUrl) {
-        const item = {
-            // Increment the currentId property
-            id: this.currentId++,
-            name: name,
-            description: description,
-            imgUrl: imgUrl
-        };
+    // addItem(name, description, imgUrl) {
+    //     const item = {
+    //         // Increment the currentId property
+    //         // id: this.currentId++,
+    //         name: name,
+    //         description: description,
+    //         imgUrl: imgUrl
+    //     };
 
-        // Push the item to the items property
-        this.items.push(item);
-        // this.loadItems();
-    }
+    //     // Push the item to the items property
+    //     this.items.push(item);
+    //     // this.loadItems();
+    // }
 
     loadItems() {
-        const list = localStorage.getItem("items")
-        this.items = JSON.parse(list);
-        const id = localStorage.getItem("id")
-        this.currentId = JSON.parse(id);
+        // const list = localStorage.getItem("items")
+        // this.items = JSON.parse(list);
+        // const id = localStorage.getItem("id")
+        // this.currentId = JSON.parse(id);
+        fetch('http://localhost:8080/api/item/all', {
+            method: 'GET', // or 'PUT'
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            // body: JSON.stringify(data),
+            })
+            .then(response => response.json())
+            .then(dbItems => {this.items = dbItems
+                console.log(this.items)
+                displayCards()})
+            .catch((error) => {
+            console.error('Error:', error);
+            });
     }
 
-    saveLocal() {
-        localStorage.setItem("items", JSON.stringify(this.items));
-        localStorage.setItem("id", JSON.stringify(this.currentId));
-    }
+    // saveLocal() {
+    //     localStorage.setItem("items", JSON.stringify(this.items));
+    //     localStorage.setItem("id", JSON.stringify(this.currentId));
+    // }
     saveDb({name, description, imgUrl}){
         const data = { name,  description, imgUrl };
 
@@ -51,29 +65,43 @@ class ItemsController {
         });
     }
 
-    // update({name, description, imageUrl}){
-    //     const data = { name,  description, imageUrl };
-
-    //     fetch('http://localhost:8080/api/item', {
-    //     method: 'PUT', // or 'PUT'
-    //     headers: {
-    //         'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify(data),
-    //     })
-    //     .then(response => response.json())
-    //     .then(data => {
-    //     console.log('Success:', data);
-    //     })
-    //     .catch((error) => {
-    //     console.error('Error:', error);
-    //     });
-    // }
-
     delete(itemId){
 
         fetch(`http://localhost:8080/api/item/${itemId}`, {
         method: 'DELETE', // or 'PUT'
+        // mode: "no-cors",
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        },
+        // body: JSON.stringify(data),
+        })
+        .then(response => response.json())
+        .then(console.log('Success'))
+        .catch((error) => {
+        console.error('Error:', error);
+        });
+    }
+    findById(itemId){
+
+        fetch(`http://localhost:8080/api/item/${itemId}`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        })
+        .then(response => response.json())
+        .then(dbItems => {this.items = dbItems
+            console.log(dbItems)})
+            // createModal(dbItems)})
+        .then(console.log('Success'))
+        .catch((error) => {
+        console.error('Error:', error);
+        });
+    }
+    update(itemId){
+
+        fetch(`http://localhost:8080/api/item/${itemId}`, {
+        method: 'PUT', // or 'PUT'
         headers: {
             'Content-Type': 'application/json',
         },
@@ -88,21 +116,5 @@ class ItemsController {
         });
     }
 
-    // findById(itemId){
 
-    //     fetch(`http://localhost:8080/item/${itemId}`, {
-    //     method: 'GET',
-    //     headers: {
-    //         'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify(data),
-    //     })
-    //     .then(response => response.json())
-    //     .then(data => {
-    //     console.log('Success:', data);
-    //     })
-    //     .catch((error) => {
-    //     console.error('Error:', error);
-    //     });
-    // }
 }
