@@ -10,3 +10,7 @@ https://docs.google.com/document/d/19HefUTJml-SPmAvQyeabblEEQJ4RRSHqkXQ43xYWzpI/
 
 # Website Deployment
 https://jennytheodore.github.io/Final-Project/
+
+# Open Chrome without Cors
+OSX terminal:
+open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security
