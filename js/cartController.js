@@ -7,13 +7,14 @@ class CartController {
     }
 
     // Create the addItem method
-    addItem(name, description, imgUrl) {
+    addItem(name, description, imgUrl, price) {
         const item = {
             // Increment the currentId property
             id: this.currentId++,
             name: name,
             description: description,
-            imgUrl: imgUrl
+            imgUrl: imgUrl,
+            price: price
         };
 
         // Push the item to the items property
@@ -26,6 +27,7 @@ class CartController {
         this.items = JSON.parse(list);
         const id = localStorage.getItem("id")
         this.currentId = JSON.parse(id);
+        displayCards();
         // fetch('http://localhost:8080/api/item/all', {
         //     method: 'GET', // or 'PUT'
         //     headers: {
@@ -117,4 +119,5 @@ class CartController {
     //     console.error('Error:', error);
     //     });
     // }
+
 }
