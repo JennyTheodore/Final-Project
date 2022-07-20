@@ -42,6 +42,7 @@ public class ItemServiceMySQL implements ItemService {
 
         itemFromDb.setDescription(itemDTO.getDescription() != null ? itemDTO.getDescription() : itemDTO.getDescription());
         itemFromDb.setImgUrl(itemDTO.getImgUrl() != null ? itemDTO.getImgUrl() : itemDTO.getImgUrl());
+        itemFromDb.setPrice(itemDTO.getPrice() != null ? itemDTO.getPrice() : itemDTO.getPrice());
 //        save the player back to the DB
 //        return the player to the client
         return itemRepository.save(itemFromDb);

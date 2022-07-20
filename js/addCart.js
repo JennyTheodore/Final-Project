@@ -6,18 +6,17 @@ let add = document.getElementById("page-container");
 add.addEventListener("click", function (event) {
   if (event.target.textContent === "Add to Cart") {
     // Extract info from data-bs-* attributes
-    let button = event.target.parentElement.childNodes;
-    console.log(button);
-    // let name = button.getAttribute("data-bs-name");
-    // let description = button.getAttribute("data-bs-description");
-    // let imgUrl = button.getAttribute("data-bs-imgUrl");
+    let button = event.target.parentElement.childNodes[1].children;
+    let imgUrl = button[0].src;
+    let name = button[1].textContent;
+    let price = button[2].textContent;
+    let description = button[3].textContent;
 
-    // Add to item to cart by LocalStorage
-    // cartController.addItem(name, description, imgUrl);
+    // Save to LocalStorage
+    cartController.addItem(name, description, imgUrl);
+    cartController.saveLocal();
+    // cartCounter();
   }
-
-  // cartCounter();
-
 
   // Update the modal's content.
   // let modalTitle = exampleModal.querySelector(".modal-title");
