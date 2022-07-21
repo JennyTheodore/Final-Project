@@ -39,7 +39,6 @@ public class ItemServiceMySQL implements ItemService {
         } else {
             itemFromDb.setName(itemDTO.getName());
         }
-
         itemFromDb.setDescription(itemDTO.getDescription() != null ? itemDTO.getDescription() : itemDTO.getDescription());
         itemFromDb.setImgUrl(itemDTO.getImgUrl() != null ? itemDTO.getImgUrl() : itemDTO.getImgUrl());
         itemFromDb.setPrice(itemDTO.getPrice() != null ? itemDTO.getPrice() : itemDTO.getPrice());
