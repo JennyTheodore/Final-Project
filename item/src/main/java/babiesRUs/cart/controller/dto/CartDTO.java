@@ -1,6 +1,6 @@
-package babiesRUs.item.controller.dto;
+package babiesRUs.cart.controller.dto;
 
-public class ItemDTO {
+public class CartDTO {
 
     private String name;
 
@@ -9,7 +9,8 @@ public class ItemDTO {
     private String imgUrl;
 
     private Double price;
-    public ItemDTO( String name, String description, String imageUrl, Double price)
+
+    public CartDTO(String name, String description, String imageUrl, Double price)
     {
         this.name = name;
         this.description = description;
