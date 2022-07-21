@@ -4,11 +4,7 @@
 } 
 .btn {
      background-color: white;
-<<<<<<< HEAD
      color: black
-=======
-     color: black;
->>>>>>> origin
      padding: 10px 28px;
      border-radius: 28;
 }
@@ -22,7 +18,6 @@
     border-radius: 0.5rem;
 }
 
-<<<<<<< HEAD
 .checked {
     color: orange;
   }
@@ -61,21 +56,37 @@
     bottom: 0;
     right: 0;
     background:
-    color var(--text-color):
+    color var(--text-color);
     padding: 10px;
     cursor: pointer;
 }
 .add-cart:hover{
     background: blue(341, 33%, 17%);
 }
-=======
-#about img {
-    width: 40em;
+.main-footer {
+    background-color: #5ce1e6;
+    color: white;
+     padding: .25em 0; 
 }
 
-.checked {
-    color: orange;
-  }
+.main-footer-container {
+    display: flex;
+    align-items: center;
+}
 
-  
->>>>>>> origin
+.main-footer-container ul {
+    flex-grow: 1;
+    text-align: end;
+} 
+
+.footer-nav li {
+    padding: 0 .5em;
+}
+
+.footer-nav img {
+    width: 15px;
+    height: 15px;
+}
+.footer-last p {
+  text-align: center;
+}

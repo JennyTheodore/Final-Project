@@ -139,27 +139,30 @@ body, html {
   
   
   
-  .footer{
-    background-color: aquamarine;
-   text-align: center;
-    height: 100px;
-    margin: 5rem auto;
-    padding: 2rem 0;
-    margin-bottom: 5rem;
-    
-  }
-  /* 
-  .footer-section {
+  .main-footer {
+    background-color: #5ce1e6;
+    color: white;
+     padding: .25em 0; 
+}
+
+.main-footer-container {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    max-width: 1366px;
-    margin: 0 auto;
-    padding: 0 5rem;
-  }
-  
-  .footer-section p {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-  }  */ 
-  
+}
+
+.main-footer-container ul {
+    flex-grow: 1;
+    text-align: end;
+} 
+
+.footer-nav li {
+    padding: 0 .5em;
+}
+
+.footer-nav img {
+    width: 15px;
+    height: 15px;
+}
+.footer-last p {
+  text-align: center;
+}
