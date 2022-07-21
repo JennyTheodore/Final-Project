@@ -158,6 +158,26 @@ body, html, p {
   .Card button:hover {
     opacity: 0.7;
   }
+<<<<<<< HEAD
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  .main-footer {
+    background-color: #5ce1e6;
+    color: white;
+     padding: .25em 0; 
+}
+
+.main-footer-container {
+=======
 
 
 
@@ -180,9 +200,29 @@ body, html, p {
   }
   /*
   .footer-section {
+>>>>>>> 00fe11fab008fbb88a09a1de27d4cbfa3489a4a6
     display: flex;
-    flex-direction: column;
     align-items: center;
+<<<<<<< HEAD
+}
+
+.main-footer-container ul {
+    flex-grow: 1;
+    text-align: end;
+} 
+
+.footer-nav li {
+    padding: 0 .5em;
+}
+
+.footer-nav img {
+    width: 15px;
+    height: 15px;
+}
+.footer-last p {
+  text-align: center;
+}
+=======
     max-width: 1366px;
     margin: 0 auto;
     padding: 0 5rem;
@@ -192,3 +232,4 @@ body, html, p {
     font-size: 1.2rem;
     margin-bottom: 1rem;
   }  */
+>>>>>>> 00fe11fab008fbb88a09a1de27d4cbfa3489a4a6
