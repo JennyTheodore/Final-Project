@@ -15,7 +15,6 @@ add.addEventListener("click", function (event) {
     // Save to LocalStorage
     cartController.addItem(name, description, imgUrl, price);
     cartController.saveLocal();
-    console.log(price);
     // cartCounter();
   }
 

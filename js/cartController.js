@@ -27,7 +27,7 @@ class CartController {
         this.items = JSON.parse(list);
         const id = localStorage.getItem("id")
         this.currentId = JSON.parse(id);
-        displayCards();
+        displayCart();
         // fetch('http://localhost:8080/api/item/all', {
         //     method: 'GET', // or 'PUT'
         //     headers: {
@@ -67,22 +67,25 @@ class CartController {
     //     });
     // }
 
-    // delete(itemId){
-
-    //     fetch(`http://localhost:8080/api/item/${itemId}`, {
-    //     method: 'DELETE', // or 'PUT'
-    //     // mode: "no-cors",
-    //     headers: {
-    //         'Content-type': 'application/json; charset=UTF-8',
-    //     },
-    //     // body: JSON.stringify(data),
-    //     })
-    //     .then(response => response.json())
-    //     .then(console.log('Success'))
-    //     .catch((error) => {
-    //     console.error('Error:', error);
-    //     });
-    // }
+    delete(itemId){
+        let list = JSON.parse(localStorage["items"]);
+        list.splice(itemId,1);
+        list = JSON.stringify(list);
+        localStorage.setItem("items", list);
+        // fetch(`http://localhost:8080/api/item/${itemId}`, {
+        // method: 'DELETE', // or 'PUT'
+        // // mode: "no-cors",
+        // headers: {
+        //     'Content-type': 'application/json; charset=UTF-8',
+        // },
+        // // body: JSON.stringify(data),
+        // })
+        // .then(response => response.json())
+        // .then(console.log('Success'))
+        // .catch((error) => {
+        // console.error('Error:', error);
+        // });
+    }
 
     // update(itemId, data){
 

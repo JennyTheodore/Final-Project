@@ -11,42 +11,44 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#"><strong>Angels R Us</strong></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#"><strong>Angels R Us</strong></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-          </button>
+        </button>
 
-          <div class="navbar-list container-fluid">
+        <div class="navbar-list container-fluid">
 
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
-              <ul class="navbar-nav">
-                <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="../index.html"><strong>Home</strong></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="./mom.html"><strong>Moms</strong></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="./Babypage.html"><strong>Babies</strong></a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    More
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <li><a class="dropdown-item" href="#">My Account</a></li>
-                    <li><a class="dropdown-item" href="#">My Cart</a></li>
-                    <li><a class="dropdown-item" href="#">Customer Review</a></li>
-                    <li><a class="dropdown-item" href="./about.html">About Us</a></li>
-                  </ul>
-                </li>
-              </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="../index.html"><strong>Home</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./mom.html"><strong>Moms</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./Babypage.html"><strong>Babies</strong></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            More
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">My Account</a></li>
+                            <li><a class="dropdown-item" href="#">My Cart</a></li>
+                            <li><a class="dropdown-item" href="#">Customer Review</a></li>
+                            <li><a class="dropdown-item" href="./about.html">About-Us</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
-          </div>
         </div>
-    </nav>
+    </div>
+</nav>
 
     <header id="banner">
         <h1 class="heading-title">My Cart !</h1>
@@ -65,22 +67,14 @@
                     <td>Subtotal</td>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td><a href="#"><box-icon name='x-circle'></box-icon></a></td>
-                    <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2mZXKRQfd6EdIxdQX6LsjPZ-6et0nJmub-Xo92wNm9Q-a5rFI&usqp=CAU" alt=""></td>
-                    <td>Vibrant Sea Turtle Buddy</td>
-                    <td>$ 18.17</td>
-                    <td><input type="number" value="1"></td>
-                    <td>$ 18.17</td>
-                </tr>
+            <tbody id="cartList">
 
             </tbody>
         </table>
     </section>
 
-    
-    // Checkout
+
+    <!-- // Checkout -->
       <section id="card-add" class="section-p1">
         <div id="coupon">
             <h3>Apply Coupon</h3>
@@ -89,12 +83,12 @@
                 <button class="normal">Apply</button>
             </div>
         </div>
-         <div id="subtotal">
+         <div>
             <h3>Cart Totals</h3>
             <table>
                 <tr>
                     <td>Cart Subtotal</td>
-                    <td>$33.00</td>
+                    <td id="subTotal">$33.00</td>
                 </tr>
                 <tr>
                     <td>Shipping</td>
@@ -102,7 +96,7 @@
                 </tr>
                 <tr>
                     <td><strong>Total</strong></td>
-                    <td><strong>$ 33.00</strong></td>
+                    <td id="total"><strong>$ 33.00</strong></td>
                 </tr>
             </table>
             <button class="submit">Proceed to Checkout</button>
