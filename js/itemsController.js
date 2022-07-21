@@ -81,24 +81,8 @@ class ItemsController {
         console.error('Error:', error);
         });
     }
-    findById(itemId){
 
-        fetch(`http://localhost:8080/api/item/${itemId}`, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        })
-        .then(response => response.json())
-        .then(dbItems => {this.items = dbItems
-            console.log(dbItems)})
-            // createModal(dbItems)})
-        .then(console.log('Success'))
-        .catch((error) => {
-        console.error('Error:', error);
-        });
-    }
-    update(itemId){
+    update(itemId, data){
 
         fetch(`http://localhost:8080/api/item/${itemId}`, {
         method: 'PUT', // or 'PUT'
@@ -116,5 +100,21 @@ class ItemsController {
         });
     }
 
+    // findById(itemId){
 
+    //     fetch(`http://localhost:8080/api/item/${itemId}`, {
+    //     method: 'GET',
+    //     headers: {
+    //         'Content-Type': 'application/json',
+    //     },
+    //     })
+    //     .then(response => response.json())
+    //     .then(dbItems => {this.items = dbItems
+    //         console.log(dbItems)})
+    //         // createModal(dbItems)})
+    //     .then(console.log('Success'))
+    //     .catch((error) => {
+    //     console.error('Error:', error);
+    //     });
+    // }
 }

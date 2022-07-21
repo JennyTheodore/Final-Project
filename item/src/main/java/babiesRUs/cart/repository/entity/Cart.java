@@ -1,6 +1,6 @@
-package babiesRUs.item.repository.entity;
+package babiesRUs.cart.repository.entity;
 
-import babiesRUs.item.controller.dto.ItemDTO;
+import babiesRUs.cart.controller.dto.CartDTO;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,7 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Item {
+public class Cart {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
@@ -18,12 +18,13 @@ public class Item {
     private String description;
 
     private String imgUrl;
+
     private Double price;
 
-    public Item() {
+    public Cart() {
     }
 
-    public Item(Integer id, String name, String description, String imgUrl, Double price) {
+    public Cart(Integer id, String name, String description, String imgUrl, Double price) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -31,11 +32,11 @@ public class Item {
         this.price = price;
     }
 
-    public Item(ItemDTO itemDTO) {
-        this.name = itemDTO.getName();
-        this.description = itemDTO.getDescription();
-        this.imgUrl = itemDTO.getImgUrl();
-        this.price = itemDTO.getPrice();
+    public Cart(CartDTO cartDTO) {
+        this.name = cartDTO.getName();
+        this.description = cartDTO.getDescription();
+        this.imgUrl = cartDTO.getImgUrl();
+        this.price = cartDTO.getPrice();
     }
 
     public Integer getId()
@@ -84,7 +85,7 @@ public class Item {
 
     @Override
     public String toString() {
-        return "Item{" +
+        return "Cart{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
