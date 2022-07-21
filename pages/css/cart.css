@@ -1,3 +1,30 @@
+.logo {
+    grid-area: brand;
+  }
+  .navbar-brand {
+    margin-left: 1em;
+  }
+  .navbar-list {
+    grid-area: list;
+  }
+  #cartLogo {
+    width: 2em;
+    height: auto;
+    grid-area: cart;
+  }
+
+  #pill {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+  }
+  .navbar {
+    background-color: light;
+    display: grid;
+    grid-template-columns: .1fr 1fr .035fr;
+    grid-template-areas: "brand list cart";
+  }
+
 #banner{
     background: url(https://static9.depositphotos.com/1000123/1165/i/600/depositphotos_11657844-stock-photo-abstract-holidays-backgrounds-with-beauty.jpg);
     width: 100%;
@@ -125,28 +152,3 @@
 #cart-add{
     flex-direction: column;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
