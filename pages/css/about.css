@@ -1,7 +1,34 @@
+.logo {
+    grid-area: brand;
+  }
+  .navbar-brand {
+    margin-left: 1em;
+  }
+  .navbar-list {
+    grid-area: list;
+  }
+  #cartLogo {
+    width: 2em;
+    height: auto;
+    grid-area: cart;
+  }
+
+  #pill {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+  }
+  .navbar {
+    display: grid;
+    grid-template-columns: .1fr 1fr .035fr;
+    grid-template-areas: "brand list cart";
+  }
+
+
 #header {
     background: url(https://www.naeyc.org/sites/default/files/styles/page_header_media_large/public/022018/family-banner9.jpg?itok=FmtrgD1l) top/cover no-repeat;
     padding-top: 104px;
-} 
+}
 .btn {
      background-color: white;
      color: black;
