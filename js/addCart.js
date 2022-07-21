@@ -1,6 +1,24 @@
 // Initialize a new CartController with currentId set to 0
 const cartController = new CartController();
 
+// load number of items in cart on load
+window.onload = function () {
+  cardCounter();
+};
+
+// Set cart badge to number from load
+function cardCounter() {
+  let newNumber = cartController.loadItems();
+  if (newNumber === undefined) {
+    return;
+  } else {
+    let cartBadge = document.getElementById("pill");
+    cartBadge.removeAttribute("class", "invisible");
+    cartBadge.setAttribute("class", "badge rounded-pill bg-danger visible");
+    cartBadge.innerText = newNumber;
+  }
+}
+
 // Event Listener for all Add Cart Buttons
 let add = document.getElementById("card-container");
 add.addEventListener("click", function (event) {
@@ -19,22 +37,3 @@ add.addEventListener("click", function (event) {
     cardCounter();
   }
 });
-
-// load number of items in cart on load
-window.onload = function () {
-  cardCounter();
-};
-
-
-// Set cart badge to number from load
-function cardCounter() {
-  let newNumber = cartController.loadItems();
-  if (newNumber === undefined) {
-    return;
-  } else {
-    let cartBadge = document.getElementById("pill");
-    cartBadge.removeAttribute("class", "invisible");
-    cartBadge.setAttribute("class", "badge rounded-pill bg-danger visible");
-    cartBadge.innerText = newNumber;
-  }
-}

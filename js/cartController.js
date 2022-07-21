@@ -30,8 +30,6 @@ class CartController {
     } else {
       this.items = JSON.parse(list);
     }
-    // const id = localStorage.getItem("id");
-    // this.currentId = JSON.parse(id);
     if (window.location.href.indexOf("MyCart") > -1) {
       displayCart();
     } else {

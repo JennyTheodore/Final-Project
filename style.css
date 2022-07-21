@@ -1,5 +1,6 @@
-body, html {
+body, html, p {
     height: 100%;
+    margin-bottom: 0px;
   }
 
   .logo {
@@ -66,7 +67,7 @@ body, html {
     cursor: pointer;
     font-size: 16px;
   }
-  
+
    .btn {
     width: 100px;
     height: 35px;
