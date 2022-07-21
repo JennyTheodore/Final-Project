@@ -15,45 +15,51 @@
 <body>
     <!-- About-Us -->
 
-    <!-- Nav -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#"><strong>Angels R Us</strong></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+    <!-- navbar -->
+  <nav class="navbar navbar-expand-md fixed-top navbar-light bg-light">
+    <!-- Navbar Logo -->
+    <div class="logo">
+      <a class="navbar-brand" href="../index.html"><strong>Angels R Us</strong></a>
+    </div>
 
-            <div class="navbar-list container-fluid">
+    <!-- Navbar List -->
+    <div class="navbar-list d-flex flex-row-reverse">
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="../index.html"><strong>Home</strong></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./mom.html"><strong>Moms</strong></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./Babypage.html"><strong>Babies</strong></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            More
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="#">My Account</a></li>
+              <li><a class="dropdown-item" href="./about.html">About-Us</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
 
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="../index.html"><strong>Home</strong></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./mom.html"><strong>Moms</strong></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./Babypage.html"><strong>Babies</strong></a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                More
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">My Account</a></li>
-                                <li><a class="dropdown-item" href="./MyCart.html">My Cart</a></li>
-                                <li><a class="dropdown-item" href="#">Customer Review</a></li>
-                                <li><a class="dropdown-item" href="#">About Us</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </nav>
+      <!-- Toggle Button -->
+      <button class="navbar-toggler me-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+    <!-- Cart Logo -->
+    <a class="me-3" href="./MyCart.html">
+      <svg id="cartLogo"xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M96 0C107.5 0 117.4 8.19 119.6 19.51L121.1 32H541.8C562.1 32 578.3 52.25 572.6 72.66L518.6 264.7C514.7 278.5 502.1 288 487.8 288H170.7L179.9 336H488C501.3 336 512 346.7 512 360C512 373.3 501.3 384 488 384H159.1C148.5 384 138.6 375.8 136.4 364.5L76.14 48H24C10.75 48 0 37.25 0 24C0 10.75 10.75 0 24 0H96zM128 464C128 437.5 149.5 416 176 416C202.5 416 224 437.5 224 464C224 490.5 202.5 512 176 512C149.5 512 128 490.5 128 464zM512 464C512 490.5 490.5 512 464 512C437.5 512 416 490.5 416 464C416 437.5 437.5 416 464 416C490.5 416 512 437.5 512 464z"/></svg>
+      <span id="pill" class="badge rounded-pill bg-danger invisible">99</span>
+    </a>
+  </nav>
 
     <!-- Hero -->
     <header id="header" class="vh-100 d-flex align-items-center">
@@ -165,8 +171,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
-    <script src="../js/itemsController.js"></script>
-    <script src="../js/item-form.js"></script>
+    <script src="../js/cartController.js"></script>
+    <script src="../js/addCart.js"></script>
 </body>
 
 </html>

@@ -1,7 +1,33 @@
+.logo {
+    grid-area: brand;
+  }
+  .navbar-brand {
+    margin-left: 1em;
+  }
+  .navbar-list {
+    grid-area: list;
+  }
+  #cartLogo {
+    width: 2em;
+    height: auto;
+    grid-area: cart;
+  }
+
+  #pill {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+  }
+  .navbar {
+    display: grid;
+    grid-template-columns: .1fr 1fr .035fr;
+    grid-template-areas: "brand list cart";
+  }
+
 #header {
     background: url("/images/src/pregnant-mom.jpg") top/1000px ;
     padding-top: 104px;
-} 
+}
 .btn {
      background-color: white;
      color: black;
@@ -25,5 +51,3 @@
 .checked {
     color: orange;
   }
-
-  

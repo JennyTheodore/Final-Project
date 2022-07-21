@@ -1,7 +1,36 @@
+.logo {
+  grid-area: brand;
+}
+.navbar-brand {
+  margin-left: 1em;
+}
+.navbar-list {
+  grid-area: list;
+}
+#cartLogo {
+  width: 2em;
+  height: auto;
+  grid-area: cart;
+}
+
+#pill {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+}
+.navbar {
+  display: grid;
+  grid-template-columns: .1fr 1fr .035fr;
+  grid-template-areas: "brand list cart";
+}
+
+
 h2 {
     text-align: center;
     margin-top: 2rem;
 }
+
+
 .spam {
     text-align: center;
     font-style: bold;
@@ -12,23 +41,21 @@ h2 {
     display: flex;
     justify-content: space-around;
 }
+.hero {
+  width: 100%;
+}
+.hero img {
+    width: 100%;
+    height: 300px;
+    object-fit:cover;
+}
+
+
 .card-group {
     display: flex;
     justify-content: space-around;
 
 }
-h2 {
-    text-align: center;
-    color: black;
-    margin-top: 100px;
-    /* margin-bottom: 50px; */
-   }
-
-  /* .btn {
-       background-color: white;
-       color: black;
-       padding: 10px 28px;
-       border-radius: 28; */
 
   .card-img-top {
     width: 200px;
@@ -50,10 +77,6 @@ h2 {
    font-family: Verdana, Geneva, Tahoma, sans-serif;
    color: crimson
   }
-
-
-
-
 
 
   .Card {
@@ -79,7 +102,6 @@ h2 {
     text-align: center;
     cursor: pointer;
     font-size: 16px;
-
   }
 
   .Card button:hover {
