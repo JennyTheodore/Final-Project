@@ -152,12 +152,11 @@
 #cart-add{
     flex-direction: column;
 }
-<<<<<<< HEAD:pages/css/MyCart.css
 
 .main-footer {
     background-color: #5ce1e6;
     color: white;
-     padding: .25em 0; 
+     padding: .25em 0;
 }
 
 .main-footer-container {
@@ -168,7 +167,7 @@
 .main-footer-container ul {
     flex-grow: 1;
     text-align: end;
-} 
+}
 
 .footer-nav li {
     padding: 0 .5em;
@@ -181,28 +180,3 @@
 .footer-last p {
   text-align: center;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-=======
->>>>>>> 00fe11fab008fbb88a09a1de27d4cbfa3489a4a6:pages/css/cart.css

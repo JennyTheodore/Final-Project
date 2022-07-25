@@ -6,21 +6,6 @@ class ItemsController {
         this.currentId = currentId;
     }
 
-    // Create the addItem method
-    // addItem(name, description, imgUrl) {
-    //     const item = {
-    //         // Increment the currentId property
-    //         // id: this.currentId++,
-    //         name: name,
-    //         description: description,
-    //         imgUrl: imgUrl
-    //     };
-
-    //     // Push the item to the items property
-    //     this.items.push(item);
-    //     // this.loadItems();
-    // }
-
     loadItems() {
         // const list = localStorage.getItem("items")
         // this.items = JSON.parse(list);
@@ -35,7 +20,7 @@ class ItemsController {
             })
             .then(response => response.json())
             .then(dbItems => {this.items = dbItems
-                console.log(this.items)
+                // console.log(this.items)
                 displayCards()})
             .catch((error) => {
             console.error('Error:', error);
@@ -46,8 +31,8 @@ class ItemsController {
     //     localStorage.setItem("items", JSON.stringify(this.items));
     //     localStorage.setItem("id", JSON.stringify(this.currentId));
     // }
-    saveDb({name, description, imgUrl}){
-        const data = { name,  description, imgUrl };
+    saveDb({name, description, imgUrl, price}){
+        const data = { name,  description, imgUrl, price };
 
         fetch('http://localhost:8080/api/item/add', {
         method: 'POST', // or 'PUT'

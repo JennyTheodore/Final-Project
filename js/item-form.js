@@ -11,13 +11,15 @@ newItemForm.addEventListener("submit", (event) => {
   const newName = document.querySelector("#newItemName");
   const newDescription = document.querySelector("#newItemDescription");
   const newImgUrl = document.querySelector("#newItemImgUrl");
+  const newPrice = document.querySelector("#newItemPrice");
   // Grab input values
   const name = newName.value;
   const description = newDescription.value;
   const imgUrl = newImgUrl.value;
+  const price = newPrice.value
 
   // Add item to DB
-  itemsController.saveDb({ name, description, imgUrl });
+  itemsController.saveDb({ name, description, imgUrl, price});
   // displayCards();
   itemsController.loadItems();
 
@@ -25,6 +27,7 @@ newItemForm.addEventListener("submit", (event) => {
   newItemName.value = "";
   newItemDescription.value = "";
   newItemImgUrl.value = "";
+  newItemPrice.value = "";
 });
 
 // Event Listener for cards
@@ -55,17 +58,20 @@ exampleModal.addEventListener("show.bs.modal", function (event) {
   let name = button.getAttribute("data-bs-name");
   let description = button.getAttribute("data-bs-description");
   let imgUrl = button.getAttribute("data-bs-imgUrl");
+  let price = button.getAttribute("data-bs-price");
 
   // Update the modal's content.
   let modalTitle = exampleModal.querySelector(".modal-title");
   let modalName = exampleModal.querySelector("#name");
   let modalDescription = exampleModal.querySelector("#description");
   let modalImgUrl = exampleModal.querySelector("#imgUrl");
+  let modalPrice = exampleModal.querySelector("#price");
 
   modalTitle.textContent = id;
   modalName.value = name;
   modalDescription.value = description;
   modalImgUrl.value = imgUrl;
+  modalPrice.value = price;
 });
 
 // Event Listener for Edit in Modal
@@ -77,8 +83,9 @@ edit.addEventListener("click", () => {
   let name = exampleModal.querySelector("#name").value;
   let description = exampleModal.querySelector("#description").value;
   let imgUrl = exampleModal.querySelector("#imgUrl").value;
+  let price = exampleModal.querySelector("#price").value;
 
-  let data = { name, description, imgUrl };
+  let data = { name, description, imgUrl, price };
   itemsController.update(itemId, data);
   itemsController.loadItems();
 });
@@ -93,7 +100,7 @@ function displayCards() {
                 <div class="card-body">
                     <h5 class="card-title">${item.name}</h5>
                     <p class="card-text">${item.description}</p>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-id="${item.id}" data-bs-name="${item.name}" data-bs-description="${item.description}" data-bs-imgUrl="${item.imgUrl}">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-id="${item.id}" data-bs-name="${item.name}" data-bs-description="${item.description}" data-bs-imgUrl="${item.imgUrl}" data-bs-price="${item.price}">
                         View
                     </button>
                     <a href="#" class="btn btn-primary delete">Delete</a>

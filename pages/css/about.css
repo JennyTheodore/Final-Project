@@ -24,7 +24,6 @@
     grid-template-areas: "brand list cart";
   }
 
-
 #header {
     background: url(https://www.naeyc.org/sites/default/files/styles/page_header_media_large/public/022018/family-banner9.jpg?itok=FmtrgD1l) top/cover no-repeat;
     padding-top: 104px;
@@ -53,7 +52,7 @@
   .main-footer {
     background-color: #5ce1e6;
     color: white;
-     padding: .25em 0; 
+     padding: .25em 0;
 }
 
 .main-footer-container {
@@ -64,7 +63,7 @@
 .main-footer-container ul {
     flex-grow: 1;
     text-align: end;
-} 
+}
 
 .footer-nav li {
     padding: 0 .5em;

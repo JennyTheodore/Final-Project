@@ -20,7 +20,6 @@ class CartController {
     // Push the item to the items property
     // console.log(item);
     this.items.push(item);
-    // this.loadItems();
   }
 
   loadItems() {
@@ -30,8 +29,10 @@ class CartController {
     } else {
       this.items = JSON.parse(list);
     }
-    if (window.location.href.indexOf("MyCart") > -1) {
+    if (window.location.href.indexOf("cart") > -1) {
+      console.log("deleted");
       displayCart();
+      return this.items.length.toString();
     } else {
       // console.log(this.items);
       return this.items.length.toString();
